@@ -1,0 +1,15 @@
+{
+  "name_th": "นายภาสกร อัครจิณณ์ รัศมีดารา",
+  "name_en": "Mr. Phassakorn Akarajin Russmeedara",
+  "nickname": "โอ๊ต",
+  "target_role": "ผู้ช่วยพยาบาล (Nursing Assistant)",
+  "target_organization": "กรมแพทย์หลวง สำนักพระราชวัง",
+  "phone": "082-580-3334",
+  "email": "phasakorn.a.r@gmail.com",
+  "location": "กรุงเทพมหานคร",
+  "assets": { "profile": "/assets/profile.jpg" },
+  "downloads": {
+    "resume": "/documents/Phassakorn_Resume.pdf",
+    "cv": "/documents/Phassakorn_CV.pdf"
+  }
+}

@@ -1,0 +1,11 @@
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")}),{threshold:.1});
+$$(".reveal").forEach(el=>io.observe(el));
+const counters=$$(".stats strong");let counted=false;
+const co=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)&&!counted){counted=true;counters.forEach(el=>{const t=+el.dataset.count;let n=0;const timer=setInterval(()=>{n=Math.min(t,n+1);el.textContent=n;if(n>=t)clearInterval(timer)},70)})}}, {threshold:.4});
+if($(".stats"))co.observe($(".stats"));
+$("#themeBtn").onclick=()=>{document.body.classList.toggle("dark");localStorage.setItem("dark",document.body.classList.contains("dark"))};
+if(localStorage.getItem("dark")==="true")document.body.classList.add("dark");
+let english=false;
+$("#langBtn").onclick=()=>{english=!english;document.documentElement.lang=english?"en":"th";$("#langBtn").textContent=english?"TH":"EN";$$("[data-th]").forEach(el=>el.textContent=english?el.dataset.en:el.dataset.th)};
+window.addEventListener("scroll",()=>{const h=document.documentElement;$(".progress").style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+"%";document.querySelector(".nav").style.boxShadow=scrollY>20?"0 8px 30px rgba(0,0,0,.06)":"none"});
